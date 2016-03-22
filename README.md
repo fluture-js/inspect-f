@@ -6,7 +6,10 @@
 [![Code Coverage](https://codecov.io/github/Avaq/inspect-f/coverage.svg?branch=develop)](https://codecov.io/github/Avaq/inspect-f/inspect-f.js?branch=develop)
 
 Cast a function to string and adjust its indentation. Intended for rendering
-function bodies in a `pre`-tags or console and what have you.
+function bodies in `pre`-tags or consoles and what have you.
+
+> `npm install --save inspect-f` <sup>Requires a node 5.0.0 compatible
+  environment like modern browsers, transpilers or Node 5+</sup>
 
 
 ## Usage
