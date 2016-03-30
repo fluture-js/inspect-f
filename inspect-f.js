@@ -53,20 +53,31 @@
     return (new Array(n + 1)).join(' ');
   }
 
+  function show(f, indentation){
+    return f.toString().replace(RTABS, indentation);
+  }
+
+  function toLines(s){
+    return s.split(REOL);
+  }
+
+  function fixIndentation(lines, indentation){
+    const info = guessIndentation(lines.slice(1));
+    const RPAD = new RegExp(pad(info.tabsize), 'g');
+    return lines.map(line =>
+      line.slice(Math.min(info.depth, getPadding(line)))
+      .replace(RPAD, '\t').replace(RTABS, indentation)
+    ).join('\n');
+  }
+
   return function inspectf(n, f){
     checkn(n);
     if(arguments.length < 2) return f => inspectf(n, f);
     checkf(f);
-    const padding = pad(n);
-    const shown = f.toString().replace(RTABS, padding);
-    const lines = shown.split(REOL);
+    if(f.toString !== Function.prototype.toString) return f.toString();
+    const i = pad(n), shown = show(f, i), lines = toLines(shown, i);
     if(lines.length < 2) return shown;
-    const i = guessIndentation(lines.slice(1));
-    const RPAD = new RegExp(pad(i.tabsize), 'g');
-    return lines.map(line =>
-      line.slice(Math.min(i.depth, getPadding(line)))
-      .replace(RPAD, '\t').replace(RTABS, padding)
-    ).join('\n');
+    return fixIndentation(lines, i);
   }
 
 }));

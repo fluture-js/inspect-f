@@ -72,4 +72,10 @@ describe('Inspect F', () => {
     expect(actual).to.contain('\n  \n  \n  ');
   });
 
+  it('does not mess with custom toString functions', () => {
+    const f = () => {};
+    f.toString = () => 'Hello\n    world!';
+    expect(inspectf(2, f)).to.equal('Hello\n    world!');
+  });
+
 });
