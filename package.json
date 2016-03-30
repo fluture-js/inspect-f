@@ -1,6 +1,6 @@
 {
   "name": "inspect-f",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cast a function to string and adjust its indentation",
   "main": "inspect-f.js",
   "scripts": {
