@@ -3,13 +3,14 @@
 [![NPM Version](https://badge.fury.io/js/inspect-f.svg)](https://www.npmjs.com/package/inspect-f)
 [![Dependencies](https://david-dm.org/avaq/inspect-f.svg)](https://david-dm.org/avaq/inspect-f)
 [![Build Status](https://travis-ci.org/Avaq/inspect-f.svg?branch=master)](https://travis-ci.org/Avaq/inspect-f)
-[![Code Coverage](https://codecov.io/github/Avaq/inspect-f/coverage.svg?branch=develop)](https://codecov.io/github/Avaq/inspect-f/inspect-f.js?branch=develop)
+[![Code Coverage](https://codecov.io/gh/Avaq/inspect-f/branch/master/graph/badge.svg)](https://codecov.io/gh/Avaq/inspect-f)
+
 
 Cast a function to string and adjust its indentation. Intended for rendering
 function bodies in `pre`-tags or consoles and what have you.
 
-> `npm install --save inspect-f` <sup>Requires a node 5.0.0 compatible
-  environment like modern browsers, transpilers or Node 5+</sup>
+> `npm install --save inspect-f` <sup>Requires a node 4.0.0 compatible
+  environment like modern browsers, transpilers or Node 4+</sup>
 
 
 ## Usage
