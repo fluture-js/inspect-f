@@ -1,4 +1,3 @@
-/*global define*/
 (function(global, f){
 
   'use strict';
@@ -8,8 +7,8 @@
     module.exports = f();
   }
 
-  else if(typeof define === 'function' && define.amd){
-    define([], f);
+  else if(typeof global.define === 'function' && global.define.amd){
+    global.define([], f);
   }
 
   else{
