@@ -1,5 +1,5 @@
 {
-  "extends": ["warp/es6"],
+  "extends": ["warp"],
   "parserOptions": {
     "sourceType": "script"
   },
@@ -12,7 +12,6 @@
     "global": true
   },
   "rules": {
-    "prefer-template": 0,
     "func-style": 0
   }
 }

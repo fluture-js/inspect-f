@@ -11,7 +11,7 @@
     global.inspectf = f();
   }
 
-}(/*istanbul ignore next*/(global || window || this), () => {
+}(/*istanbul ignore next*/(global || window || this), function() {
 
   'use strict';
 
@@ -31,21 +31,27 @@
     }
   }
 
-  const RSPACE = /^ */;
-  const RCODE = /\s*[^\s]/;
-  const RTABS = /\t/g;
-  const REOL = /\n\r?/;
+  var RSPACE = /^ */;
+  var RCODE = /\s*[^\s]/;
+  var RTABS = /\t/g;
+  var REOL = /\n\r?/;
+
+  function isCode(line) {
+    return RCODE.test(line);
+  }
 
   function getPadding(line) {
     return line.match(RSPACE)[0].length;
   }
 
   function guessIndentation(lines) {
-    const filtered = lines.filter(x => RCODE.test(x));
-    const paddings = filtered.map(getPadding);
-    const depth = paddings.reduce((a, b) => Math.min(a, b), Infinity);
-    const tabsize = paddings.map(x => x - depth).find(x => x > 1) || 2;
-    return {depth, tabsize};
+    var filtered = lines.filter(isCode);
+    var paddings = filtered.map(getPadding);
+    var depth = paddings.reduce(Math.min, Infinity);
+    var tabsize = paddings
+    .map(function(x) { return x - depth; })
+    .find(function(x) { return x > 1; }) || 2;
+    return {depth: depth, tabsize: tabsize};
   }
 
   function pad(n) {
@@ -61,20 +67,22 @@
   }
 
   function fixIndentation(lines, indentation) {
-    const info = guessIndentation(lines.slice(1));
-    const RPAD = new RegExp(pad(info.tabsize), 'g');
-    return lines.map(line =>
-      line.slice(Math.min(info.depth, getPadding(line)))
-      .replace(RPAD, '\t').replace(RTABS, indentation)
-    ).join('\n');
+    var info = guessIndentation(lines.slice(1));
+    var RPAD = new RegExp(pad(info.tabsize), 'g');
+    return lines.map(function(line) {
+      return line.slice(Math.min(info.depth, getPadding(line)))
+      .replace(RPAD, '\t').replace(RTABS, indentation);
+    }).join('\n');
   }
 
   return function inspectf(n, f) {
     checkn(n);
-    if(arguments.length < 2) {return f => inspectf(n, f);}
+    if(arguments.length < 2) {
+      return function inspectf$partial(f) { return inspectf(n, f); };
+    }
     checkf(f);
     if(f.toString !== Function.prototype.toString) {return f.toString();}
-    const i = pad(n), shown = show(f, i), lines = toLines(shown, i);
+    var i = pad(n), shown = show(f, i), lines = toLines(shown, i);
     if(lines.length < 2) {return shown;}
     return fixIndentation(lines, i);
   };
