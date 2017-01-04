@@ -9,8 +9,7 @@
 Cast a function to string and adjust its indentation. Intended for rendering
 function bodies in `pre`-tags or consoles and what have you.
 
-> `npm install --save inspect-f` <sup>Requires a node 4.0.0 compatible
-  environment like modern browsers, transpilers or Node 4+</sup>
+> `npm install --save inspect-f`
 
 
 ## Usage
