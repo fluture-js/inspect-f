@@ -10,6 +10,7 @@
     "postmerge": "npm install",
     "postcheckout": "npm install",
     "precommit": "npm test",
+    "release": "npm outdated --long && xyz --edit --repo git@github.com:Avaq/inspect-f.git --tag 'X.Y.Z' --increment",
     "test": "npm run clean && npm run lint && npm run test:unit",
     "test:unit": "istanbul cover --report html _mocha -- --ui bdd --reporter spec --check-leaks --full-trace && codecov"
   },
@@ -40,6 +41,7 @@
     "istanbul": "^0.4.2",
     "jsverify": "^0.7.1",
     "mocha": "^3.2.0",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "xyz": "^2.0.1"
   }
 }
