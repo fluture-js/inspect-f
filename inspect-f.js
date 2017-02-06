@@ -18,16 +18,16 @@
   function checkn(n) {
     if(typeof n !== 'number') {
       throw new TypeError(
-      'inspectf expects its first argument to be a number'
-    );
+        'inspectf expects its first argument to be a number'
+      );
     }
   }
 
   function checkf(f) {
     if(typeof f !== 'function') {
       throw new TypeError(
-      'inspectf expects its second argument to be a function'
-    );
+        'inspectf expects its second argument to be a function'
+      );
     }
   }
 
