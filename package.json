@@ -6,13 +6,12 @@
   "scripts": {
     "clean": "rimraf npm-debug.log coverage",
     "lint": "eslint inspect-f.js test",
-    "lint:fix": "eslint --fix inspect-f.js test",
-    "postmerge": "npm install",
-    "postcheckout": "npm install",
-    "precommit": "npm test",
+    "lint:fix": "npm run lint -- --fix",
     "release": "npm outdated --long && xyz --edit --repo git@github.com:fluture-js/inspect-f.git --tag 'X.Y.Z' --increment",
-    "test": "npm run clean && npm run lint && npm run test:unit",
-    "test:unit": "istanbul cover --report html _mocha -- --ui bdd --reporter spec --check-leaks --full-trace && codecov"
+    "test": "npm run test:all && npm run test:coverage && codecov",
+    "test:all": "npm run lint && npm run test:unit",
+    "test:unit": "_mocha --ui bdd --reporter list --check-leaks --full-trace test/**.test.js",
+    "test:coverage": "npm run clean && istanbul cover --report html _mocha -- --ui bdd --reporter dot --check-leaks --bail test/**.test.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +36,6 @@
     "codecov": "^1.0.1",
     "eslint": "^3.12.2",
     "eslint-config-warp": "^1.2.0",
-    "husky": "^0.12.0",
     "istanbul": "^0.4.2",
     "jsverify": "^0.7.1",
     "mocha": "^3.2.0",
