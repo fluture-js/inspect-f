@@ -33,11 +33,11 @@
   "homepage": "https://github.com/fluture-js/inspect-f",
   "devDependencies": {
     "chai": "^3.5.0",
-    "codecov": "^1.0.1",
+    "codecov": "^2.2.0",
     "eslint": "^3.12.2",
     "eslint-config-warp": "^1.2.0",
     "istanbul": "^0.4.2",
-    "jsverify": "^0.7.1",
+    "jsverify": "^0.8.2",
     "mocha": "^3.2.0",
     "rimraf": "^2.5.2",
     "xyz": "^2.0.1"
