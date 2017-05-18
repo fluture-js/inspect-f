@@ -1,5 +1,7 @@
 # inspect-f
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fluture-js/inspect-f.svg)](https://greenkeeper.io/)
+
 [![NPM Version](https://badge.fury.io/js/inspect-f.svg)](https://www.npmjs.com/package/inspect-f)
 [![Dependencies](https://david-dm.org/fluture-js/inspect-f.svg)](https://david-dm.org/fluture-js/inspect-f)
 [![Build Status](https://travis-ci.org/fluture-js/inspect-f.svg?branch=master)](https://travis-ci.org/fluture-js/inspect-f)
