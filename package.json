@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/fluture-js/inspect-f#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.1",
     "codecov": "^2.2.0",
     "eslint": "^3.19.0",
     "eslint-config-warp": "^1.2.0",
