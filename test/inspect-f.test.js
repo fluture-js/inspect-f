@@ -3,7 +3,6 @@
 var jsc = require('jsverify');
 var expect = require('chai').expect;
 var inspectf = require('..');
-
 var pad = function(n) { return (new Array(n + 1)).join(' '); };
 var id = function(x) { return x; };
 

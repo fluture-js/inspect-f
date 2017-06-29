@@ -77,13 +77,15 @@
 
   return function inspectf(n, f) {
     checkn(n);
+
     if(arguments.length < 2) {
       return function inspectf$partial(f) { return inspectf(n, f); };
     }
+
     checkf(f);
-    if(f.toString !== Function.prototype.toString) {return f.toString();}
+    if(f.toString !== Function.prototype.toString) { return f.toString(); }
     var i = pad(n), shown = show(f, i), lines = toLines(shown, i);
-    if(lines.length < 2) {return shown;}
+    if(lines.length < 2) { return shown; }
     return fixIndentation(lines, i);
   };
 
