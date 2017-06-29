@@ -34,7 +34,7 @@
     "chai": "^4.0.1",
     "codecov": "^2.2.0",
     "eslint": "^3.19.0",
-    "eslint-config-warp": "^1.2.0",
+    "eslint-config-warp": "^2.0.0",
     "jsverify": "^0.8.2",
     "mocha": "^3.4.1",
     "nyc": "^11.0.1",
