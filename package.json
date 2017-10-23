@@ -32,7 +32,7 @@
   "homepage": "https://github.com/fluture-js/inspect-f#readme",
   "devDependencies": {
     "chai": "^4.0.1",
-    "codecov": "^2.2.0",
+    "codecov": "^3.0.0",
     "eslint": "^4.2.0",
     "eslint-config-warp": "^2.0.0",
     "jsverify": "^0.8.2",
