@@ -11,7 +11,7 @@
     global.inspectf = f();
   }
 
-}(/*istanbul ignore next*/(global || window || this), function() {
+}(/*istanbul ignore next*/this, function() {
 
   'use strict';
 
