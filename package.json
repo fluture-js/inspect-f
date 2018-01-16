@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf npm-debug.log .nyc_output coverage.lcov",
     "lint": "eslint index.js test",
-    "release": "npm outdated --long && xyz --edit --repo git@github.com:fluture-js/fluture-sanctuary-types.git --tag 'X.Y.Z' --increment",
+    "release": "npm outdated --long && xyz --edit --repo git@github.com:fluture-js/inspect-f.git --tag 'X.Y.Z' --increment",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "nyc mocha --ui bdd --reporter list --check-leaks --full-trace test/**.test.js",
     "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
