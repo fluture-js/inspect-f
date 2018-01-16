@@ -1,17 +1,15 @@
-(function(global, f) {
+(function(f) {
 
   'use strict';
 
   /*istanbul ignore next*/
-  if(typeof module !== 'undefined') {
+  if(typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = f();
-  } else if(typeof global.define === 'function' && global.define.amd) {
-    global.define([], f);
-  } else{
-    global.inspectf = f();
+  }else{
+    self.inspectf = f();
   }
 
-}(/*istanbul ignore next*/(global || window || this), function() {
+}(function() {
 
   'use strict';
 
